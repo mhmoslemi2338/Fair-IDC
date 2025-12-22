@@ -85,6 +85,10 @@ class CIFAR_10S(VisionDataset):
 
         # self.num_data = data_count
         self.num_data = len(self.dataset['image'])
+        # --- add these for compatibility ---
+        self.targets = self.dataset['label'].astype(np.int64)
+        self.nclass = self.num_classes
+
 
         if self.labelwise:
             self.idx_map = self._make_idx_map()
