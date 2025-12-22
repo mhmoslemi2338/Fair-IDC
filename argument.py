@@ -96,6 +96,7 @@ parser.add_argument('--nclass', default=10, type=int, help='number of classes in
 parser.add_argument('--dseed', default=0, type=int, help='seed for class sampling')
 parser.add_argument('--size', default=224, type=int, help='spatial size of image')
 parser.add_argument('--phase', default=-1, type=int, help='index for multi-processing')
+parser.add_argument('--save_dir', default='./results', type=str, help='index for multi-processing')
 parser.add_argument('--nclass_sub', default=-1, type=int, help='number of classes for each process')
 parser.add_argument('-l',
                     '--load_memory',
@@ -443,11 +444,12 @@ else:
     if args.mixup != 'vanilla':
         args.tag += f'_{args.mixup}'
 
-# Result folder name
-if args.test:
-    args.save_dir = './results/test'
-else:
-    args.save_dir = f"./results/{datatag}/{modeltag}{args.tag}"
+# # Result folder name
+# if args.test:
+#     args.save_dir = './results/test'
+# else:
+#     args.save_dir = f"./results/{datatag}/{modeltag}{args.tag}"
+
 args.modeltag = modeltag
 args.datatag = datatag
 """
