@@ -125,7 +125,7 @@ parser.add_argument('--weight-decay', '--wd', default=5e-4, type=float, help='we
 parser.add_argument('--seed', default=0, type=int, help='random seed for training')
 parser.add_argument('--pretrained', action='store_true')
 
-# Mixup
+# Mixup 
 parser.add_argument('--mixup',
                     default='cut',
                     type=str,
